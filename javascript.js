@@ -49,8 +49,35 @@ function getQueryURL (startDate, endDate, searchTerm, url, apiKey) {
 	return(myURL);
 }
 
+function buildResultDiv(resultData, number){
+	var result = $("<result>")
+	result.addClass("result")
+	var h2 = $("<h2>")
+	var result_number = $("<span>")
+	result_number.html(number)
+	var headline = $("<span>")
+	headline.html(resultData.headline.main)
+	var author = $("<p>")
+	author.html(resultData.byline.original)
+	var section = $("<p>")
+	section.html("book review")
+	var date = $("<p>")
+	date.html(resultData.pub_date)
+	var webpage = $("<a>")
+	webpage.html(resultData.web_url)
+	h2.append(result_number);
+	h2.append(headline);
+	result.append(h2);
+	result.append(author);
+	result.append(section);
+	result.append(date);
+	result.append(webpage);
+
+	return result;
+}
+
 $("#clearButton").on("click", function(){
-	alert("hey");
+	$("#lineId").html("");
 })
 
 $("#submitButton").on("click", function(event){
@@ -69,5 +96,11 @@ $("#submitButton").on("click", function(event){
 		method: "GET"
 	}).done(function(response){
 		console.log(response);
-	})
+		$("#lineId").html("");
+		var my_response = response.response;
+		var docs = my_response.docs;
+		for(i = 0; i < numberRecords; i++){
+			$("#lineId").append(buildResultDiv(docs[i], i+1));
+		}
+	});
 })
