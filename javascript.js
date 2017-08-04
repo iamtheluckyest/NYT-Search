@@ -50,11 +50,11 @@ function getQueryURL (startDate, endDate, searchTerm, url, apiKey) {
 }
 
 function buildResultDiv(resultData, number){
-	var result = $("<result>")
+	var result = $("<div>")
 	result.addClass("result")
 	var h2 = $("<h2>")
 	var result_number = $("<span>")
-	result_number.html(number)
+	result_number.html(number).addClass("result-number")
 	var headline = $("<span>")
 	headline.html(resultData.headline.main)
 	var author = $("<p>")
