@@ -11,7 +11,7 @@ h1 {
 	text-align: center;
 }
 
-.jumbotron, .panel > .panel-heading, button[type=submit] {
+.jumbotron, .panel > .panel-heading, .result-number, button[type=submit] {
 	background-color: #263A72;
 	color:white;
 }
@@ -43,8 +43,25 @@ button[type=submit]:focus  {
 }
 
 select > option:hover {
-	background-color: #51618E; !important
-	color:white; !important
+	background-color: #51618E; 
+	color:white;
+
 }
 
+.result {
+	background-color: #DCDFE8;
+	border-radius:5px;
+	padding:10px;
+	margin-bottom: 15px;
+}
 
+.result-number {
+	display:inline-block;
+	text-align:center;
+	padding: auto 5px;
+	margin-right:5px;
+	height:39.6px;
+	width:39.6px;
+	border-radius: 5px;
+	font-size:36px;
+}
