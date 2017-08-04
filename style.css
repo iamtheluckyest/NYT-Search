@@ -11,7 +11,7 @@ h1 {
 	text-align: center;
 }
 
-.jumbotron, .panel > .panel-heading {
+.jumbotron, .panel > .panel-heading, button[type=submit] {
 	background-color: #263A72;
 	color:white;
 }
@@ -20,6 +20,31 @@ h1 {
 	font-size:3.5em;
 }
 
-.panel-heading > h3 {
-	font-size: 1.4em;
+.panel-default {
+	border-color: #263A72;
 }
+
+.panel-heading > h3 {
+	font-size: 1.5em;
+}
+
+button[type=submit] {
+	font-size:16px;
+}
+
+button[type=submit]:hover  {
+	background-color: #51618E;
+	color:white;
+}
+
+button[type=submit]:focus  {
+	background-color: #51618E;
+	color:white;
+}
+
+select > option:hover {
+	background-color: #51618E; !important
+	color:white; !important
+}
+
+
